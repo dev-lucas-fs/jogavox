@@ -2,17 +2,19 @@ import GameList from "@/components/GameList"
 import SearchInput from "@/components/SearchInput"
 import Colors from "@/constants/Colors"
 import Global from "@/constants/Global"
-import { View, Text, StyleSheet } from "react-native"
+import { View, Text, StyleSheet} from "react-native";
+import { useState } from "react"
 
 export default function Library() {
+    const textInputState = useState<string>("");
 
     return (
         <View style={[Global.heightWithTabs, styles.container]}>     
             <View style={styles.subContainer}>
                 <Text style={styles.title}>Biblioteca</Text>
-                <SearchInput />
+                <SearchInput state={textInputState} />
             </View>
-            <GameList />
+            <GameList titleFilter={textInputState[0]} />
         </View>
     )
 }

@@ -1,20 +1,38 @@
 import Colors from "@/constants/Colors"
-import { View, StyleSheet, ScrollView } from "react-native"
+import { StyleSheet, ScrollView } from "react-native"
 import ListItem from "./ListItem"
+import { useState, useEffect } from "react"
 
+interface IProps extends React.ComponentPropsWithoutRef<typeof ScrollView> {
+    titleFilter: string
+}
 
-export default function GameList(props: React.ComponentPropsWithoutRef<typeof ScrollView>) {
-    const listItems = [0, 1, 1, 2, ,3 ,4, 6]
+export default function GameList(props: IProps) {
+    const names = ["Jogo dos Instrumentos", "Jogo", "Meio Ambiente"]
+    const listItems = Array.from({ length: 3 }, (v, k) => (
+        {
+            title:names[k], 
+            author:"Tiago e Antonio Borges", 
+            image: require("assets/capa[mobile].png")
+        }
+    ))
 
+    const [items, setItems] = useState(listItems);
+
+    useEffect(() => {
+        setItems(() => (
+            listItems.filter(value => value.title.toUpperCase().search(props.titleFilter.toUpperCase()) !== -1)
+        ))
+    }, [props.titleFilter]);
 
     return (
         <ScrollView contentContainerStyle={{ paddingBottom: 30 }} style={[props.style, styles.container]}>
             {
-                listItems.map((props, i) => (
+                items.map((props, i) => (
                     <ListItem 
-                        title="Jogo dos Instrumentos" 
-                        author="Tiago e Antonio Borges" 
-                        image={require("assets/capa[mobile].png")} 
+                        title={props.title} 
+                        author={props.author}  
+                        image={props.image} 
                         style={{
                             borderBottomWidth: 2/3,
                             borderColor: "#BEBEBE"
