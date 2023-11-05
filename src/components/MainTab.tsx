@@ -12,6 +12,8 @@ export default function MainTab({ children }: PropsWithChildren) {
                     borderTopLeftRadius: 20, 
                     borderTopRightRadius: 20,
                     backgroundColor: Colors.tabBar.backgroundColor,
+                    position: 'absolute',
+                    borderTopWidth: 0
                 },
                 tabBarActiveTintColor: Colors.primary,   
                 tabBarShowLabel: false ,

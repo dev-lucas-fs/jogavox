@@ -8,7 +8,7 @@ export default function GameList(props: React.ComponentPropsWithoutRef<typeof Sc
 
 
     return (
-        <ScrollView contentContainerStyle={{ paddingBottom: 20 }} style={[props.style, styles.container]}>
+        <ScrollView contentContainerStyle={{ paddingBottom: 30 }} style={[props.style, styles.container]}>
             {
                 listItems.map((props, i) => (
                     <ListItem 

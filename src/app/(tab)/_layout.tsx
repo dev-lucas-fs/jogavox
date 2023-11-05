@@ -79,7 +79,6 @@ export default function AppLayout() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: Colors.gameList.background
+        flex: 1
     }
 })
