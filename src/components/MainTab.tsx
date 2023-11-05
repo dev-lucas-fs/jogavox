@@ -14,7 +14,8 @@ export default function MainTab({ children }: PropsWithChildren) {
                     backgroundColor: Colors.tabBar.backgroundColor,
                 },
                 tabBarActiveTintColor: Colors.primary,   
-                tabBarShowLabel: false      
+                tabBarShowLabel: false ,
+                tabBarInactiveTintColor: "#C6C6C6"    
             }}
            
         >

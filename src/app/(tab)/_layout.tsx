@@ -38,7 +38,7 @@ export default function AppLayout() {
                             <Ionicons
                                 name="grid-outline"
                                 size={25} 
-                                color={Colors.primary}
+                                color={color}
                             />
                         )
                     }}
@@ -52,7 +52,7 @@ export default function AppLayout() {
                             <Ionicons
                                 name="download-outline"
                                 size={25} 
-                                color={Colors.primary}
+                                color={color}
                             />
                         )
                     }}
@@ -66,7 +66,7 @@ export default function AppLayout() {
                             <Ionicons
                                 name="settings-outline" 
                                 size={25} 
-                                color={Colors.primary}
+                                color={color}
                             />
                         )
                     }}
