@@ -11,9 +11,10 @@ export default function MainTab({ children }: PropsWithChildren) {
                     height: 80,
                     borderTopLeftRadius: 20, 
                     borderTopRightRadius: 20,
-                    backgroundColor: Colors.tabBar.backgroundColor
+                    backgroundColor: Colors.tabBar.backgroundColor,
                 },
-                tabBarActiveTintColor: Colors.primary,           
+                tabBarActiveTintColor: Colors.primary,   
+                tabBarShowLabel: false      
             }}
            
         >
