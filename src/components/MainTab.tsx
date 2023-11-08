@@ -8,10 +8,11 @@ export default function MainTab({ children }: PropsWithChildren) {
             screenOptions={{
                 headerShown: false,
                 tabBarStyle: {
-                    height: 80,
-                    borderTopLeftRadius: 20, 
-                    borderTopRightRadius: 20,
-                    backgroundColor: Colors.tabBar.backgroundColor,
+                    height: 70,
+                    backgroundColor: "#fff",
+                    position: 'absolute',
+                    borderTopWidth: 0,
+                    overflow: "hidden"
                 },
                 tabBarActiveTintColor: Colors.primary,   
                 tabBarShowLabel: false ,
