@@ -1,0 +1,422 @@
+[
+    {
+        "DADOS GERAIS": {
+            "NOME DO JOGO": "Instrumentos",
+            "AUTOR": "Tiago e Antonio Borges",
+            "DATA DE CRIAÇÃO": "09/04/2011",
+            "VERSÃO": "1.0",
+            "DATA DA VERSÃO": "09/04/2011",
+            "COMENTÁRIOS": "Demonstrativo do Jogavox"
+        },
+        "MODELO": {
+            "FUNDO": "capa2.jpg",
+            "FONTE DO TEXTO": "Arial,30,SIM",
+            "LUGARES": "11"
+        },
+        "LUGAR 1": {
+            "NOME": "Capa",
+            "LUGAR OK": "Violão",
+            "LUGAR ERRO": "Violão",
+            "PONTUAÇÃO": "0",
+            "TERMINADOR": "NÃO",
+            "NÚMERO DE SLIDES": "1",
+            "COR DA LETRA": "AZUL"
+        },
+        "SLIDE 1 1": {
+            "2": "JOGO DE CONHECIMENTOS GERAIS",
+            "4": "SOBRE INSTRUMENTOS MUSICAIS",
+            "9": "Aperte Enter",
+            "TÍTULO": "Capa 1",
+            "MÍDIA": "Aquarela do Brasil.mp3",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "LUGAR 2": {
+            "NOME": "Violão",
+            "RESPOSTA ESPERADA": "violão",
+            "LUGAR OK": "Acerto Violão",
+            "LUGAR ERRO": "Erro Violão",
+            "PONTUAÇÃO": "0",
+            "TERMINADOR": "NÃO",
+            "NÚMERO DE SLIDES": "3",
+            "COR DA LETRA": "PRETO"
+        },
+        "SLIDE 2 1": {
+            "0": "Pergunta 1",
+            "2": "Qual o nome do instrumento",
+            "3": "musical a seguir?",
+            "TÍTULO": "Violão 1",
+            "FIGURA": "pergunta1.jpg",
+            "MÍDIA": "plim.wav",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "SLIDE 2 2": {
+            "1": "Escute...",
+            "TÍTULO": "violão 2",
+            "FIGURA": "pergunta1.jpg",
+            "MÍDIA": "violão.mp3",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "NÃO"
+        },
+        "SLIDE 2 3": {
+            "1": "Qual o instrumento?",
+            "TÍTULO": "violão 3",
+            "FIGURA": "pergunta1.jpg",
+            "MÍDIA": "plim.wav",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "LUGAR 3": {
+            "NOME": "Acerto Violão",
+            "RESPOSTA ESPERADA": "repetir",
+            "LUGAR OK": "Violão",
+            "LUGAR ERRO": "Piano",
+            "PONTUAÇÃO": "1",
+            "TERMINADOR": "NÃO",
+            "NÚMERO DE SLIDES": "2",
+            "COR DA LETRA": "PRETO"
+        },
+        "SLIDE 3 1": {
+            "0": "Parabéns!",
+            "2": "Este é um trecho da música",
+            "3": "Sentado, esperando, desejando...",
+            "4": "do cantor Jack Johnson.",
+            "TÍTULO": "Acerto Violão 1",
+            "FIGURA": "acerto.jpg",
+            "MÍDIA": "aplausos.mp3",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "SLIDE 3 2": {
+            "0": "I can't always be",
+            "1": "waiting on you",
+            "2": "No I can't always be",
+            "3": "playing your fool...",
+            "TÍTULO": "Acerto Violão 2",
+            "FIGURA": "jackjohnson.jpg",
+            "MÍDIA": "jackJohnson.mp3",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "NÃO",
+            "FALA TEXTO": "NÃO"
+        },
+        "LUGAR 4": {
+            "NOME": "Erro Violão",
+            "RESPOSTA ESPERADA": "repetir",
+            "LUGAR OK": "Violão",
+            "LUGAR ERRO": "Piano",
+            "PONTUAÇÃO": "0",
+            "TERMINADOR": "NÃO",
+            "NÚMERO DE SLIDES": "2",
+            "COR DA LETRA": "PRETO"
+        },
+        "SLIDE 4 1": {
+            "0": "Que pena, você errou!",
+            "1": "O nome desse instrumento é violão!",
+            "TÍTULO": "Erro Violão 1",
+            "FIGURA": "violão.jpg",
+            "MÍDIA": "boing.wav",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "SLIDE 4 2": {
+            "0": "O violão é um instrumento de cordas, comum na",
+            "1": "música popular brasileira, onde é utilizado em",
+            "2": "quase todos os estilos musicais.",
+            "4": "Samba, chorinho e rock acústico",
+            "5": "são alguns dos estilos que o",
+            "6": "utilizam como base musical, na",
+            "7": "medida em que adiciona muita",
+            "8": "beleza à música.",
+            "9": "Aperte Enter...",
+            "TÍTULO": "Erro Violão 2",
+            "FIGURA": "violão.jpg",
+            "MÍDIA": "violão.mid",
+            "ESPERA MÍDIA": "NÃO",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "LUGAR 5": {
+            "NOME": "Piano",
+            "RESPOSTA ESPERADA": "piano",
+            "LUGAR OK": "Acerto Piano",
+            "LUGAR ERRO": "Erro Piano",
+            "PONTUAÇÃO": "0",
+            "TERMINADOR": "NÃO",
+            "NÚMERO DE SLIDES": "3",
+            "COR DA LETRA": "PRETO"
+        },
+        "SLIDE 5 1": {
+            "1": "Pergunta 2:",
+            "3": "Qual o nome do instrumento musical a seguir?",
+            "TÍTULO": "Piano 1",
+            "FIGURA": "pergunta 2.jpg",
+            "MÍDIA": "plim.wav",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "SLIDE 5 2": {
+            "1": "Escute...",
+            "TÍTULO": "Piano 2",
+            "FIGURA": "pergunta2.jpg",
+            "MÍDIA": "piano.mid",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "NÃO"
+        },
+        "SLIDE 5 3": {
+            "1": "Qual o instrumento?",
+            "TÍTULO": "Piano 3",
+            "FIGURA": "pergunta2.jpg",
+            "MÍDIA": "plim.wav",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "LUGAR 6": {
+            "NOME": "Acerto Piano",
+            "RESPOSTA ESPERADA": "repetir",
+            "LUGAR OK": "Piano",
+            "LUGAR ERRO": "Gaita",
+            "PONTUAÇÃO": "1",
+            "TERMINADOR": "NÃO",
+            "NÚMERO DE SLIDES": "2",
+            "COR DA LETRA": "PRETO"
+        },
+        "SLIDE 6 1": {
+            "0": "Parabéns!",
+            "2": "Você acertou!",
+            "3": "Ouça agora um trecho da Marcha Turca",
+            "4": "de Mozart.",
+            "TÍTULO": "Acerto Piano 1",
+            "FIGURA": "acerto.jpg",
+            "MÍDIA": "aplausos.mp3",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "SLIDE 6 2": {
+            "0": "Mozart é um compositor",
+            "1": "alemão, que viveu no",
+            "2": "século dezoito, tendo",
+            "3": "composto milhares de",
+            "4": "músicas que são apreciadas",
+            "5": "até os dias de hoje.",
+            "6": "Há quem diga que ele foi",
+            "7": "o maior músico de todos",
+            "8": "os tempos.",
+            "9": "Aperte enter...",
+            "TÍTULO": "Acerto Piano 2",
+            "FIGURA": "mozart.jpg",
+            "MÍDIA": "mozart.mp3",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "NÃO",
+            "FALA TEXTO": "SIM"
+        },
+        "LUGAR 7": {
+            "NOME": "Erro Piano",
+            "RESPOSTA ESPERADA": "repetir",
+            "LUGAR OK": "Piano",
+            "LUGAR ERRO": "Gaita",
+            "PONTUAÇÃO": "0",
+            "TERMINADOR": "NÃO",
+            "NÚMERO DE SLIDES": "2",
+            "COR DA LETRA": "PRETO"
+        },
+        "SLIDE 7 1": {
+            "0": "Que pena, você errou!",
+            "1": "O nome desse instrumento é piano!",
+            "TÍTULO": "Erro Piano 1",
+            "FIGURA": "piano.jpg",
+            "MÍDIA": "boing.wav",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "SLIDE 7 2": {
+            "0": "O piano é um instrumento musical",
+            "1": "no qual o som é produzido quando",
+            "2": "os pequenos martelos de feltro",
+            "3": "cobertos por um material macio",
+            "4": "(geralmente feltro), ativados",
+            "5": "através de um teclado, tocam",
+            "6": "nas cordas esticadas e presas",
+            "7": "numa estrutura rígida de madeira",
+            "8": "ou metal.",
+            "9": "Aperte Enter...",
+            "TÍTULO": "Erro Piano 2",
+            "FIGURA": "piano.jpg",
+            "MÍDIA": "beethoven.mp3",
+            "ESPERA MÍDIA": "NÃO",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "LUGAR 8": {
+            "NOME": "Gaita",
+            "RESPOSTA ESPERADA": "gaita",
+            "LUGAR OK": "Acerto Gaita",
+            "LUGAR ERRO": "Erro Gaita",
+            "PONTUAÇÃO": "0",
+            "TERMINADOR": "NÃO",
+            "NÚMERO DE SLIDES": "3",
+            "COR DA LETRA": "PRETO"
+        },
+        "SLIDE 8 1": {
+            "1": "Pergunta 3:",
+            "3": "Qual o nome do instrumento",
+            "4": "musical a seguir?",
+            "TÍTULO": "Gaita 1",
+            "FIGURA": "pergunta3.jpg",
+            "MÍDIA": "plim.wav",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "SLIDE 8 2": {
+            "1": "Escute...",
+            "TÍTULO": "Gaita 2",
+            "FIGURA": "pergunta3.jpg",
+            "MÍDIA": "gaita.wav",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "NÃO"
+        },
+        "SLIDE 8 3": {
+            "1": "Qual o instrumento?",
+            "TÍTULO": "Gaita 3",
+            "FIGURA": "pergunta3.jpg",
+            "MÍDIA": "plim.wav",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "LUGAR 9": {
+            "NOME": "Acerto Gaita",
+            "RESPOSTA ESPERADA": "repetir",
+            "LUGAR OK": "Gaita",
+            "LUGAR ERRO": "Fim do Jogo",
+            "PONTUAÇÃO": "1",
+            "TERMINADOR": "NÃO",
+            "NÚMERO DE SLIDES": "3",
+            "COR DA LETRA": "PRETO"
+        },
+        "SLIDE 9 1": {
+            "0": "Parabéns!",
+            "2": "Você acertou!",
+            "3": "Ouça o refrão da música",
+            "4": "de Stevie Wonder",
+            "5": "denominada",
+            "6": "Ela não é adorável?",
+            "TÍTULO": "Acerto Gaita 1",
+            "FIGURA": "acerto.jpg",
+            "MÍDIA": "aplausos.mp3",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "SLIDE 9 2": {
+            "0": "Isn't she lovely",
+            "1": "Isn't she wonderful...",
+            "TÍTULO": "Acerto Gaita 2",
+            "FIGURA": "stevie.jpg",
+            "MÍDIA": "stevie.mp3",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "NÃO"
+        },
+        "SLIDE 9 3": {
+            "0": "Stevie Wonder",
+            "1": "é considerado um dos",
+            "2": "maiores compositores",
+            "3": "e arranjadores americanos",
+            "4": "de todos os tempos.",
+            "5": "Stevie é cego de nascença.",
+            "9": "Aperte enter",
+            "TÍTULO": "Acerto Gaita 3",
+            "FIGURA": "stevie2.jpg",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "NÃO",
+            "FALA TEXTO": "SIM"
+        },
+        "LUGAR 10": {
+            "NOME": "Erro Gaita",
+            "RESPOSTA ESPERADA": "repetir",
+            "LUGAR OK": "Gaita",
+            "LUGAR ERRO": "Fim do Jogo",
+            "PONTUAÇÃO": "0",
+            "TERMINADOR": "NÃO",
+            "NÚMERO DE SLIDES": "2",
+            "COR DA LETRA": "PRETO"
+        },
+        "SLIDE 10 1": {
+            "0": "Que pena, você errou!",
+            "1": "O nome desse instrumento é gaita!",
+            "TÍTULO": "Erro Gaita 1",
+            "FIGURA": "gaita.jpg",
+            "MÍDIA": "plim.wav",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "SLIDE 10 2": {
+            "0": "A gaita é um instrumento de",
+            "1": "sopro, em que cada nota é",
+            "2": "produzida quando uma pequena",
+            "3": "palheta associada a esta nota",
+            "4": "é soprada através de um pequeno",
+            "5": "furo localizado no topo do",
+            "6": "instrumento.",
+            "9": "Aperte enter...",
+            "TÍTULO": "Erro Gaita 2",
+            "FIGURA": "gaita.jpg",
+            "MÍDIA": "gaita2.mp3",
+            "ESPERA MÍDIA": "NÃO",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "LUGAR 11": {
+            "NOME": "Fim do Jogo",
+            "PONTUAÇÃO": "0",
+            "TERMINADOR": "SIM",
+            "NÚMERO DE SLIDES": "3",
+            "COR DA LETRA": "PRETO"
+        },
+        "SLIDE 11 1": {
+            "0": "E assim, termina nosso jogo!",
+            "1": "Tenho certeza de que foi muito bom",
+            "2": "falar um pouco sobre música.",
+            "4": "Errando ou acertando,",
+            "5": "você se divertiu!",
+            "TÍTULO": "Fim do Jogo 1",
+            "FIGURA": "parabéns.jpg",
+            "MÍDIA": "fim.mid",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "SLIDE 11 2": {
+            "7": "Sua pontuação: $pontos",
+            "9": "Volte sempre! Chame seus amigos!",
+            "TÍTULO": "Fim do Jogo 2",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "SIM"
+        },
+        "SLIDE 11 3": {
+            "9": "Volte sempre! Chame seus amigos!",
+            "TÍTULO": "Fim do Jogo 3",
+            "FIGURA": "parabéns.jpg",
+            "MÍDIA": "fim.mid",
+            "ESPERA MÍDIA": "SIM",
+            "AUTO AVANÇA": "SIM",
+            "FALA TEXTO": "NÃO"
+        }
+    }
+]

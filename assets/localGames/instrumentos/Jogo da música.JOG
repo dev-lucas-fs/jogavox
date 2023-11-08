@@ -1,0 +1,634 @@
+[DADOS GERAIS]
+NOME DO JOGO=Jogo dos Instrumentos Musicais
+AUTOR=Tiago e Antonio Borges
+DATA DE CRIAÇÃO=09/04/2011
+VERSÃO=1.0
+DATA DA VERSÃO=09/04/2011
+COMENTÁRIOS=Demonstrativo do Jogavox
+
+[MODELO]
+FUNDO=capa2.jpg
+FONTE DO TEXTO=Arial,30,SIM
+LUGARES=11
+
+[LUGAR 1]
+NOME=Capa
+DESCRIÇÃO=
+RESPOSTA ESPERADA=
+LUGAR OK=Violão
+LUGAR ERRO=Violão
+PONTUAÇÃO=0
+TERMINADOR=NÃO
+NÚMERO DE SLIDES=1
+MÍDIA=
+COR DO FUNDO=
+COR DA LETRA=AZUL
+FUNDO=
+
+[SLIDE 1 1]
+TÍTULO=Capa 1
+FIGURA=
+MÍDIA=Aquarela do Brasil.mp3
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=
+1=
+2=         JOGO DE CONHECIMENTOS GERAIS
+3=
+4=          SOBRE INSTRUMENTOS MUSICAIS
+5=
+6=
+7=
+8=
+9=Aperte Enter
+
+[LUGAR 2]
+NOME=Violão
+DESCRIÇÃO=
+RESPOSTA ESPERADA=violão
+LUGAR OK=Acerto Violão
+LUGAR ERRO=Erro Violão
+PONTUAÇÃO=0
+TERMINADOR=NÃO
+NÚMERO DE SLIDES=3
+MÍDIA=
+COR DO FUNDO=
+COR DA LETRA=PRETO
+FUNDO=
+
+[SLIDE 2 1]
+TÍTULO=Violão 1
+FIGURA=pergunta1.jpg
+MÍDIA=plim.wav
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=Pergunta 1
+1=
+2=Qual o nome do instrumento
+3=    musical a seguir?
+4=
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 2 2]
+TÍTULO=violão 2
+FIGURA=pergunta1.jpg
+MÍDIA=violão.mp3
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=NÃO
+0=
+1=Escute...
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 2 3]
+TÍTULO=violão 3
+FIGURA=pergunta1.jpg
+MÍDIA=plim.wav
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=
+1=Qual o instrumento?
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+
+[LUGAR 3]
+NOME=Acerto Violão
+DESCRIÇÃO=
+RESPOSTA ESPERADA=repetir
+LUGAR OK=Violão
+LUGAR ERRO=Piano
+PONTUAÇÃO=1
+TERMINADOR=NÃO
+NÚMERO DE SLIDES=2
+MÍDIA=
+COR DO FUNDO=
+COR DA LETRA=PRETO
+FUNDO=
+
+[SLIDE 3 1]
+TÍTULO=Acerto Violão 1
+FIGURA=acerto.jpg
+MÍDIA=aplausos.mp3
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=Parabéns!
+1=
+2=Este é um trecho da música
+3=Sentado, esperando, desejando...
+4=do cantor Jack Johnson.
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 3 2]
+TÍTULO=Acerto Violão 2
+FIGURA=jackjohnson.jpg
+MÍDIA=jackJohnson.mp3
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=NÃO
+FALA TEXTO=NÃO
+0=I can't always be
+1=   waiting on you
+2=No I can't always be
+3=   playing your fool...
+4=
+5=
+6=
+7=
+8=
+9=
+
+[LUGAR 4]
+NOME=Erro Violão
+DESCRIÇÃO=
+RESPOSTA ESPERADA=repetir
+LUGAR OK=Violão
+LUGAR ERRO=Piano
+PONTUAÇÃO=0
+TERMINADOR=NÃO
+NÚMERO DE SLIDES=2
+MÍDIA=
+COR DO FUNDO=
+COR DA LETRA=PRETO
+FUNDO=
+
+[SLIDE 4 1]
+TÍTULO=Erro Violão 1
+FIGURA=violão.jpg
+MÍDIA=boing.wav
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=Que pena, você errou!
+1=O nome desse instrumento é violão!
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 4 2]
+TÍTULO=Erro Violão 2
+FIGURA=violão.jpg
+MÍDIA=violão.mid
+ESPERA MÍDIA=NÃO
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=O violão é um instrumento de cordas, comum na
+1=música popular brasileira, onde é utilizado em
+2=quase todos os estilos musicais.
+3=
+4=Samba, chorinho e rock acústico
+5=são alguns dos estilos que o
+6=utilizam como base musical, na
+7=medida em que adiciona muita
+8=beleza à música.
+9=                Aperte Enter...
+
+[LUGAR 5]
+NOME=Piano
+DESCRIÇÃO=
+RESPOSTA ESPERADA=piano
+LUGAR OK=Acerto Piano
+LUGAR ERRO=Erro Piano
+PONTUAÇÃO=0
+TERMINADOR=NÃO
+NÚMERO DE SLIDES=3
+MÍDIA=
+COR DO FUNDO=
+COR DA LETRA=PRETO
+FUNDO=
+
+[SLIDE 5 1]
+TÍTULO=Piano 1
+FIGURA=pergunta 2.jpg
+MÍDIA=plim.wav
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=
+1=Pergunta 2:
+2=
+3= Qual o nome do instrumento musical a seguir?
+4=
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 5 2]
+TÍTULO=Piano 2
+FIGURA=pergunta2.jpg
+MÍDIA=piano.mid
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=NÃO
+0=
+1=Escute...
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 5 3]
+TÍTULO=Piano 3
+FIGURA=pergunta2.jpg
+MÍDIA=plim.wav
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=
+1=Qual o instrumento?
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+
+[LUGAR 6]
+NOME=Acerto Piano
+DESCRIÇÃO=
+RESPOSTA ESPERADA=repetir
+LUGAR OK=Piano
+LUGAR ERRO=Gaita
+PONTUAÇÃO=1
+TERMINADOR=NÃO
+NÚMERO DE SLIDES=2
+MÍDIA=
+COR DO FUNDO=
+COR DA LETRA=PRETO
+FUNDO=
+
+[SLIDE 6 1]
+TÍTULO=Acerto Piano 1
+FIGURA=acerto.jpg
+MÍDIA=aplausos.mp3
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=Parabéns!
+1=
+2=Você acertou! 
+3=Ouça agora um trecho da Marcha Turca
+4=de Mozart.
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 6 2]
+TÍTULO=Acerto Piano 2
+FIGURA=mozart.jpg
+MÍDIA=mozart.mp3
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=NÃO
+FALA TEXTO=SIM
+0=Mozart é um compositor
+1=alemão, que viveu no
+2=século dezoito, tendo
+3=composto milhares de
+4=músicas que são apreciadas
+5=até os dias de hoje.
+6=Há quem diga que ele foi
+7=o maior músico de todos
+8=os tempos.
+9=         Aperte enter...
+
+[LUGAR 7]
+NOME=Erro Piano
+DESCRIÇÃO=
+RESPOSTA ESPERADA=repetir
+LUGAR OK=Piano
+LUGAR ERRO=Gaita
+PONTUAÇÃO=0
+TERMINADOR=NÃO
+NÚMERO DE SLIDES=2
+MÍDIA=
+COR DO FUNDO=
+COR DA LETRA=PRETO
+FUNDO=
+
+[SLIDE 7 1]
+TÍTULO=Erro Piano 1
+FIGURA=piano.jpg
+MÍDIA=boing.wav
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=Que pena, você errou!
+1=O nome desse instrumento é piano!
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 7 2]
+TÍTULO=Erro Piano 2
+FIGURA=piano.jpg
+MÍDIA=beethoven.mp3
+ESPERA MÍDIA=NÃO
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=O piano é um instrumento musical
+1=no qual o som é produzido quando
+2=os pequenos martelos de feltro
+3=cobertos por um material macio
+4=(geralmente feltro), ativados
+5=através de um teclado, tocam
+6=nas cordas esticadas e presas
+7=numa estrutura rígida de madeira
+8=ou metal.
+9=               Aperte Enter...
+
+[LUGAR 8]
+NOME=Gaita
+DESCRIÇÃO=
+RESPOSTA ESPERADA=gaita
+LUGAR OK=Acerto Gaita
+LUGAR ERRO=Erro Gaita
+PONTUAÇÃO=0
+TERMINADOR=NÃO
+NÚMERO DE SLIDES=3
+MÍDIA=
+COR DO FUNDO=
+COR DA LETRA=PRETO
+FUNDO=
+
+[SLIDE 8 1]
+TÍTULO=Gaita 1
+FIGURA=pergunta3.jpg
+MÍDIA=plim.wav
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=
+1=Pergunta 3:
+2=
+3=Qual o nome do instrumento
+4=     musical a seguir?
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 8 2]
+TÍTULO=Gaita 2
+FIGURA=pergunta3.jpg
+MÍDIA=gaita.wav
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=NÃO
+0=
+1=Escute...
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 8 3]
+TÍTULO=Gaita 3
+FIGURA=pergunta3.jpg
+MÍDIA=plim.wav
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=
+1=Qual o instrumento?
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+
+[LUGAR 9]
+NOME=Acerto Gaita
+DESCRIÇÃO=
+RESPOSTA ESPERADA=repetir
+LUGAR OK=Gaita
+LUGAR ERRO=Fim do Jogo
+PONTUAÇÃO=1
+TERMINADOR=NÃO
+NÚMERO DE SLIDES=3
+MÍDIA=
+COR DO FUNDO=
+COR DA LETRA=PRETO
+FUNDO=
+
+[SLIDE 9 1]
+TÍTULO=Acerto Gaita 1
+FIGURA=acerto.jpg
+MÍDIA=aplausos.mp3
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=Parabéns!
+1=
+2=Você acertou!
+3=Ouça o refrão da música
+4=de Stevie Wonder
+5=denominada
+6=Ela não é adorável?
+7=
+8=
+9=
+
+[SLIDE 9 2]
+TÍTULO=Acerto Gaita 2
+FIGURA=stevie.jpg
+MÍDIA=stevie.mp3
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=NÃO
+0=Isn't she lovely
+1=Isn't she wonderful...
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 9 3]
+TÍTULO=Acerto Gaita 3
+FIGURA=stevie2.jpg
+MÍDIA=
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=NÃO
+FALA TEXTO=SIM
+0=Stevie Wonder
+1=é considerado um dos
+2=maiores compositores
+3=e arranjadores americanos
+4=de todos os tempos.
+5=Stevie é cego de nascença.
+6=
+7=
+8=
+9=Aperte enter
+
+[LUGAR 10]
+NOME=Erro Gaita
+DESCRIÇÃO=
+RESPOSTA ESPERADA=repetir
+LUGAR OK=Gaita
+LUGAR ERRO=Fim do Jogo
+PONTUAÇÃO=0
+TERMINADOR=NÃO
+NÚMERO DE SLIDES=2
+MÍDIA=
+COR DO FUNDO=
+COR DA LETRA=PRETO
+FUNDO=
+
+[SLIDE 10 1]
+TÍTULO=Erro Gaita 1
+FIGURA=gaita.jpg
+MÍDIA=plim.wav
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=Que pena, você errou!
+1=O nome desse instrumento é gaita!
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+
+[SLIDE 10 2]
+TÍTULO=Erro Gaita 2
+FIGURA=gaita.jpg
+MÍDIA=gaita2.mp3
+ESPERA MÍDIA=NÃO
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=A gaita é um instrumento de
+1=sopro, em que cada nota é
+2=produzida quando uma pequena
+3=palheta associada a esta nota
+4=é soprada através de um pequeno
+5=furo localizado no topo do
+6=instrumento.
+7=
+8=
+9=          Aperte enter...
+
+[LUGAR 11]
+NOME=Fim do Jogo
+DESCRIÇÃO=
+RESPOSTA ESPERADA=
+LUGAR OK=
+LUGAR ERRO=
+PONTUAÇÃO=0
+TERMINADOR=SIM
+NÚMERO DE SLIDES=3
+MÍDIA=
+COR DO FUNDO=
+COR DA LETRA=PRETO
+FUNDO=
+
+[SLIDE 11 1]
+TÍTULO=Fim do Jogo 1
+FIGURA=parabéns.jpg
+MÍDIA=fim.mid
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=E assim, termina nosso jogo!
+1=Tenho certeza de que foi muito bom
+2=falar um pouco sobre música.
+3=
+4=Errando ou acertando,
+5=você se divertiu!
+6=
+7=
+8=
+9=
+
+[SLIDE 11 2]
+TÍTULO=Fim do Jogo 2
+FIGURA=
+MÍDIA=
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=SIM
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=Sua pontuação: $pontos
+8=
+9=Volte sempre! Chame seus amigos!
+
+[SLIDE 11 3]
+TÍTULO=Fim do Jogo 3
+FIGURA=parabéns.jpg
+MÍDIA=fim.mid
+ESPERA MÍDIA=SIM
+AUTO AVANÇA=SIM
+FALA TEXTO=NÃO
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=Volte sempre! Chame seus amigos!

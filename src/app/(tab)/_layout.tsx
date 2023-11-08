@@ -1,9 +1,7 @@
 import { Tabs } from "expo-router";
-import { Ionicons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import MainTab from "@/components/MainTab";
 import { SafeAreaView, StyleSheet } from "react-native"
-import Colors from "@/constants/Colors";
-import { StatusBar } from "expo-status-bar";
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from "react";
@@ -32,11 +30,11 @@ export default function AppLayout() {
                 <Tabs.Screen 
                     name="index"
                     options={{
-                        title: "Home",
+                        title: "Biblioteca",
                         tabBarShowLabel: false,
                         tabBarIcon: ({ size, color }) => (
-                            <Ionicons
-                                name="grid-outline"
+                            <Feather
+                                name="home"
                                 size={25} 
                                 color={color}
                             />
@@ -44,13 +42,13 @@ export default function AppLayout() {
                     }}
                 />
                  <Tabs.Screen 
-                    name="download"
+                    name="Download"
                     options={{
-                        title: "download",
+                        title: "Download",
                         tabBarShowLabel: false,
                         tabBarIcon: ({ size, color }) => (
-                            <Ionicons
-                                name="download-outline"
+                            <Feather
+                                name="download"
                                 size={25} 
                                 color={color}
                             />
@@ -58,13 +56,13 @@ export default function AppLayout() {
                     }}
                 />
                 <Tabs.Screen 
-                    name="settings"
+                    name="Settings"
                     options={{
-                        title: "settings",
+                        title: "Settings",
                         tabBarShowLabel: false,
                         tabBarIcon: ({ size, color }) => (
-                            <Ionicons
-                                name="settings-outline" 
+                            <Feather
+                                name="settings" 
                                 size={25} 
                                 color={color}
                             />
@@ -72,7 +70,6 @@ export default function AppLayout() {
                     }}
                 />
             </MainTab>
-            <StatusBar style="light" backgroundColor={Colors.primary} />
         </SafeAreaView>
     );
 }
@@ -80,5 +77,6 @@ export default function AppLayout() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: "#fff"
     }
 })

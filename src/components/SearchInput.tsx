@@ -1,6 +1,5 @@
 import { StyleSheet, TextInput, Pressable, View } from "react-native";
 import { Feather } from '@expo/vector-icons';
-import Colors from "@/constants/Colors";
 import { useRef } from "react";
 
 interface props extends React.ComponentProps<typeof View> {
@@ -20,7 +19,7 @@ export default function SearchInput(props: props) {
 
     return (
         <Pressable onPress={handleOnPress} style={styles.container}>
-            <Feather name="search" size={24} color={Colors.textPrimary} />
+            <Feather name="search" size={24} color="#888888" />
             {
                 props.state 
                 ? <TextInput onChangeText={(e) => state[1](e)} value={state[0]}  ref={ref} placeholderTextColor="#A6A6A6"  placeholder="Procure pelo nome" style={styles.input}/>
@@ -33,17 +32,18 @@ export default function SearchInput(props: props) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: Colors.input.backgroundColor,
-        padding: 20,
-        paddingVertical: 15,
+        backgroundColor: "#FFF",
+        paddingHorizontal: 20,
+        height: 60,
         borderRadius: 10,
-        flexDirection: "row"
+        flexDirection: "row",
+        alignItems: "center"
     },
     input: {
         fontSize: 18,
         fontFamily: "Nunito",
         paddingHorizontal: 15,
         paddingRight: 25,
-        color: Colors.textPrimary
+        color: "#888888"
     }
 })
