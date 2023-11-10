@@ -12,6 +12,7 @@ SplashScreen.preventAutoHideAsync();
 export default function AppLayout() {
     const [fontsLoaded, fontError] = useFonts({
         'Nunito': require('assets/fonts/Nunito.ttf'),
+        'SpicyRice': require('assets/fonts/SpicyRice-Regular.ttf'),
     });
 
     const onLayoutRootView = useCallback(async () => {

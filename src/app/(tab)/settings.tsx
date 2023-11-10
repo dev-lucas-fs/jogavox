@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from "react-native"
 export default function Settings() {
 
     return (
-        <Layout title="Biblioteca">
+        <Layout title="Ajustes">
 
         </Layout>
     )

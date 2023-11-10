@@ -1,26 +1,25 @@
 import SearchInput from "@/components/SearchInput"
-import Colors from "@/constants/Colors"
 import { View, StyleSheet, FlatList} from "react-native";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Layout from "@/components/Layout";
-import DropShadow from "react-native-drop-shadow";
 import LibraryItem from "@/components/LibraryItem";
-import useLocalGames, { LocalGameType } from "@/hooks/useLocalGames";
+import useLocalGames from "@/hooks/useLocalGames";
+import * as ScreenOrientation from "expo-screen-orientation"
 
 export default function Library() {
     const textInputState = useState<string>("");
     const games = useLocalGames()
+
+    useEffect(() => {
+        ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT)
+    }, [])
 
     return (
         <Layout title="Biblioteca">
             <View style={styles.container}>
                 <SearchInput />
                 <View style={styles.listContainer}>
-                    <FlatList data={games} renderItem={({ item }) => <LibraryItem data={{
-                        name: item.name,
-                        author: item.author,
-                        thumbnail: item.image
-                    }}/>}/>
+                    <FlatList data={games} renderItem={({ item }) => <LibraryItem data={item}/>}/>
                 </View>
             </View>
         </Layout>

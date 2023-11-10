@@ -1,14 +1,16 @@
+import Layout from "@/components/Layout"
 import Colors from "@/constants/Colors"
-import { View, Text, StyleSheet, Button } from "react-native"
+import useGameDownload from "@/hooks/useGameDownload"
+import { StyleSheet, Button } from "react-native"
 
 export default function Download() {
-
+    useGameDownload()
     
 
     return (
-        <View style={styles.container}>
-            
-        </View>
+        <Layout title="Acervo Online" >
+            <Button  title="Download" />
+        </Layout>
     )
 }
 

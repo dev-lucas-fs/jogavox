@@ -1,21 +1,28 @@
+import { LocalGameType } from '@/hooks/useLocalGames';
+import { router } from 'expo-router';
 import { Image, StyleSheet, Text, TouchableNativeFeedback, View } from "react-native";
 
 interface props extends React.ComponentProps<typeof View> {
-   data: {
-        name: string,
-        thumbnail: any,
-        author: string
-   }
+   data: LocalGameType
 }
 
 export default function LibraryItem(props: props) {
-    console.log(props.data.thumbnail)
+
+    function goPresentationRoute() {
+        router.push({
+            params: {
+                id: props.data.id
+            },
+            pathname: "/Presentation"
+        })
+    }
+
     return (
-       <TouchableNativeFeedback>
+       <TouchableNativeFeedback onPress={goPresentationRoute}>
             <View style={styles.container}>
                 <View style={styles.subContainer}>
                     <View style={styles.imageInfoContainer}>
-                        <Image style={styles.image} source={{ uri: props.data.thumbnail }} />
+                        <Image style={styles.image} source={{ uri: props.data.image }} />
                         <View>
                             <Text style={styles.title}>{ props.data.name  }</Text>
                             <Text style={styles.author}>{ props.data.author }</Text>

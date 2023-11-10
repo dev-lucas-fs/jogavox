@@ -5,7 +5,10 @@ export type LocalGameType = {
     image: string,
     url: string,
     size: number,
-    author: string
+    author: string,
+    id: number,
+    comments: string,
+    version: string
 }
 
 export default function useLocalGames() {
