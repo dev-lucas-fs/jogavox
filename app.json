@@ -26,7 +26,8 @@
       "softwareKeyboardLayoutMode": "pan",
       "androidNavigationBar": {
         "visible": "immersive"
-      }
+      },
+      "package": "com.jogavox"
     },
     "web": {
       "favicon": "./assets/favicon.png"
