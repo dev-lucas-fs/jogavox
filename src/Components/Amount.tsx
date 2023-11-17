@@ -24,9 +24,10 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         alignItems: "center",
         justifyContent: "center",
-        padding: 5,
+        width: 22,
         backgroundColor: "#E62117",
         borderRadius: 50,
+        aspectRatio: 1,
     },
     text: {
         fontFamily: "Barlow-Regular",
@@ -34,7 +35,6 @@ const styles = StyleSheet.create({
         color: "#fff",
         alignSelf: "center",
         verticalAlign: "middle",
-        aspectRatio: 1,
         paddingLeft: 1.5,
         fontSize: 12
     }

@@ -1,7 +1,5 @@
-
 import { Dimensions, FlatList } from 'react-native';
 import { View, Text } from 'react-native';
-import DownloadItem from '../../Components/DownloadItem';
 import { StyleSheet } from 'react-native';
 import Edit from '../../Components/Edit';
 import Carousel from 'react-native-snap-carousel'
@@ -46,7 +44,7 @@ export default function DownloadScreen() {
             <View style={[styles.sectionContainer, { flex: 1 }]}>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 20 }}>
                     <Text style={styles.sectionText}>Coleção Completa</Text>
-                    <Amount n={10} />
+                    <Amount n={3} />
                 </View>
 
                 <View style={{ flex: 1 }}>
