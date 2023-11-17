@@ -10,7 +10,7 @@ export default function Tag({ size = "small", isModern = true } : Props) {
 
     return (
         <View style={styles.tagContainer}>
-            <Text style={[styles.container, style, { backgroundColor: isModern ? "#7D00B8" : "#FF7037" }]}>
+            <Text style={[styles.container, style, { backgroundColor: isModern ? "#B62100" : "#FF7037" }]}>
                 {
                     isModern ? "Moderno" : "Legado"
                 }
@@ -21,7 +21,7 @@ export default function Tag({ size = "small", isModern = true } : Props) {
 
 const styles = StyleSheet.create({
     tagContainer: {
-        alignSelf: 'flex-start'
+        alignSelf: 'auto',
     },
     container: {
         width: "100%",
@@ -31,10 +31,10 @@ const styles = StyleSheet.create({
     },
     small: {
         fontSize: 10,
-        padding: 8
+        padding: 6
     },
     large: {
-        fontSize: 16,
-        padding: 12
+        fontSize: 14,
+        padding: 10
     }
 });

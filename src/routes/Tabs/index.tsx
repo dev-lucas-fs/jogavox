@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import Layout from './Layout';
 import { View } from 'react-native';
 import { StyleSheet } from 'react-native';
-import DownloadScreen from '../DownloadScreen';
+import DownloadScreen from '../Store';
 
 const Tab = createBottomTabNavigator();
 

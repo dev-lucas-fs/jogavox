@@ -1,11 +1,13 @@
 
 import { Dimensions, FlatList } from 'react-native';
 import { View, Text } from 'react-native';
-import DownloadItem from '../Components/DownloadItem';
+import DownloadItem from '../../Components/DownloadItem';
 import { StyleSheet } from 'react-native';
-import Edit from '../Components/Edit';
+import Edit from '../../Components/Edit';
 import Carousel from 'react-native-snap-carousel'
 import { useRef } from 'react';
+import Amount from '../../Components/Amount';
+import ListItem from './ListItem';
 
 // "https://drive.google.com/uc?export=download&id=1MvBSkGzKpE9P0nMrlaaIe2dtA9kSZ_t9"
 
@@ -40,6 +42,20 @@ export default function DownloadScreen() {
                 </View>
 
             </View>
+
+            <View style={[styles.sectionContainer, { flex: 1 }]}>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 20 }}>
+                    <Text style={styles.sectionText}>Coleção Completa</Text>
+                    <Amount n={10} />
+                </View>
+
+                <View style={{ flex: 1 }}>
+                    <FlatList 
+                            contentContainerStyle={{ gap: 25, padding: 20 }} 
+                            data={[1, 2, 4]} 
+                            renderItem={ ({ item }) => <ListItem /> } />
+                </View>
+            </View>
         </>
     );
 }
@@ -72,10 +88,10 @@ const styles = StyleSheet.create({
         fontFamily: "Barlow-Regular",
         fontSize: 20,
         fontWeight: "700",
-        paddingHorizontal: 20,
+        paddingLeft: 20,
     },
     sectionContainer: {
         gap: 15,
-        marginTop: 20
+        marginTop: 20,
     }
 });

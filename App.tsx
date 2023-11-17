@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SettingsScreen from './src/routes/DownloadScreen';
+import SettingsScreen from './src/routes/Store';
 import Tabs from './src/routes/Tabs';
 import Tts from 'react-native-tts';
 
