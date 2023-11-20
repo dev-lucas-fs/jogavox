@@ -25,16 +25,18 @@ const styles = StyleSheet.create({
     },
     container: {
         width: "100%",
-        fontFamily: "Barlow-Regular",
+        fontFamily: "Barlow",
         fontWeight: "900",
         color: "#fff",
     },
     small: {
         fontSize: 10,
-        padding: 6
+        padding: 6,
+        paddingVertical: 2
     },
     large: {
         fontSize: 14,
-        padding: 10
+        padding: 10,
+        paddingVertical: 2
     }
 });

@@ -1,0 +1,45 @@
+[DADOS GERAIS]
+NOME DO JOGO=Projeto Jogavox Mobile
+AUTOR=Lucas Fernandes
+DATA DE CRIAÇÃO=29/11/2015 - Domingo
+VERSÃO=1.0
+DATA DA VERSÃO=29/11/2015 - Domingo
+COMENTÁRIOS=Arquivo de Teste
+
+[MODELO]
+LUGARES=34
+FONTE DO TEXTO=Arial,24,SIM
+COR DO FUNDO=Preto
+COR DA LETRA=Branco
+NARRANDO=SIM
+
+[LUGAR 1]
+NOME=Capa
+NÚMERO DE SLIDES=1
+COR DA LETRA=BRANCO
+FUNDO=1.jpg
+
+[SLIDE 1 1]
+TÍTULO=Capa 1
+MÍDIA=aud.wav
+AUTO AVANÇA=4s
+FALA TEXTO=sim
+POSIÇÃO TEXTO=baixo
+
+[LUGAR 2]
+NOME=Capa1
+NÚMERO DE SLIDES=1
+COR DO FUNDO=branco
+COR DA LETRA=preto
+FUNDO=2.jpg
+
+[SLIDE 2 1]
+TÍTULO=Capa1 1
+MÍDIA=aud.wav
+AUTO AVANÇA=1s
+FALA TEXTO=sim
+POSIÇÃO TEXTO=centro
+0=
+1=Vamos cuidar do nosso meio ambiente
+2=de um jeito muito bacana!
+

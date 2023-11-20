@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Pressable, StyleSheet, TextInput, View } from "react-native";
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from '@expo/vector-icons/Feather';
 
 interface Props extends React.ComponentProps<typeof View> {
     state?: any,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     },
     input: {
         fontSize: 18,
-        fontFamily: "Nunito",
+        fontFamily: "Barlow",
         paddingHorizontal: 15,
         paddingRight: 25,
         color: "#888888"

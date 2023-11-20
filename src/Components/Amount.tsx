@@ -1,6 +1,4 @@
-import { StyleSheet } from "react-native";
-import { Text } from "react-native";
-import { View } from "react-native";
+import { StyleSheet, Text, View  } from "react-native";
 
 
 interface Props extends React.PropsWithChildren {
@@ -30,7 +28,7 @@ const styles = StyleSheet.create({
         aspectRatio: 1,
     },
     text: {
-        fontFamily: "Barlow-Regular",
+        fontFamily: "Barlow",
         fontWeight: "bold",
         color: "#fff",
         alignSelf: "center",

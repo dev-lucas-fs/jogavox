@@ -1,4 +1,33 @@
 {
-  "name": "jogavox",
-  "displayName": "jogavox"
+  "expo": {
+    "name": "jogavox",
+    "slug": "jogavox",
+    "version": "1.0.0",
+    "scheme": "jogavox",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "experiments": {
+      "tsconfigPaths": true,
+      "typedRoutes": true
+    },
+    "plugins": [
+      "expo-router",
+      "expo-screen-orientation"
+    ]
+  }
 }

@@ -1,18 +1,19 @@
-import { TouchableNativeFeedback } from "react-native";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { Pressable, TouchableNativeFeedback, StyleSheet, Text, View, Image } from "react-native";
 
 
-
-
-export default function GameImage() {
+export default function GameImage({ onPress }: React.ComponentProps<typeof Pressable>) {
 
     return (
-        <TouchableNativeFeedback>
-            <View style={styles.container}>
-                <Image style={styles.image} source={{ uri: "https://drive.google.com/uc?export=download&id=1MvBSkGzKpE9P0nMrlaaIe2dtA9kSZ_t9" }} />
-                <Text style={styles.title}>Meio Ambiente</Text>
-            </View>
-        </TouchableNativeFeedback>
+        <Pressable style={styles.container} onPress={onPress}>
+                {
+                    // <Image style={styles.image} source={{ uri: "https://drive.google.com/uc?export=download&id=1MvBSkGzKpE9P0nMrlaaIe2dtA9kSZ_t9" }} />
+                    <TouchableNativeFeedback onPress={onPress}>
+                        <View style={styles.image}/>
+                    </TouchableNativeFeedback>
+                    
+                }
+                <Text style={styles.title}>Titulo Jogo</Text>
+        </Pressable>
     );
 }
 
@@ -20,7 +21,9 @@ export default function GameImage() {
 const styles = StyleSheet.create({
     container: {
         position: "relative",
-        flex: 1
+        flex: 1,
+        width: "100%",
+        aspectRatio: 1,
     },
     title: {
         width: "100%",
@@ -40,7 +43,8 @@ const styles = StyleSheet.create({
     image: {
         width: "100%",
         aspectRatio: 1,
-        borderRadius: 10
+        borderRadius: 10,
+        backgroundColor: "#d6d6d6"
     },
     play: {
 
