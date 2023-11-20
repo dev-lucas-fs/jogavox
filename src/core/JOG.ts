@@ -3,7 +3,7 @@ import { readAsStringAsync } from 'expo-file-system';
 import { Asset } from "expo-asset";
 
 
-type DadosGeraisType = {
+export type DadosGeraisType = {
     nomeJogo: string;
     autor: string;
     versao: string;
