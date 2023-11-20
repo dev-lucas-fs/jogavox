@@ -1,34 +1,37 @@
-import { View, Text, StyleSheet, Dimensions, Button } from "react-native";
+import { View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, Button } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
-import * as ScreenOrientation from "expo-screen-orientation"
-import * as NavigationBar from 'expo-navigation-bar';
-import { StatusBar } from "expo-status-bar";
 import { useContext, useState, useEffect } from 'react'
 import * as Speech from 'expo-speech';
+import { router } from "expo-router";
+import Icon from '@expo/vector-icons/Feather';
+
 
 import Square from "@/components/Square";
 import { DadosGeraisType } from "@/core/JOG";
 import { CurrentGameContext } from "@/contexts/CurrentGameContext";
+import SpeechOptions from "@/config/SpeechConfig";
+import { download } from "@/core/GameDownloader";
 
 
-
-async function forceLANDSCAPE() {
-    await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_RIGHT);
-    await NavigationBar.setVisibilityAsync("hidden");
+const defaultDadosGerais = {
+    autor: "",
+    nomeJogo: "carregando...",
+    versao: "",
+    comentarios: [""]
 }
 
 
 export default function Presentation() {
-    forceLANDSCAPE();
-
     const context = useContext(CurrentGameContext);
-    const [dadosGerais, setDadosGerais] = useState<DadosGeraisType>({
-        autor: "",
-        nomeJogo: "carregando...",
-        versao: "",
-        comentarios: [""]
-    });
+    const [dadosGerais, setDadosGerais] = useState<DadosGeraisType>(defaultDadosGerais);
     const [speaking, setSpeaking] = useState<boolean>(true)
+    const [showNext, setShowNext] = useState<boolean>(true)
+
+    
+    async function goNextSlide() {
+        //@ts-ignore
+        router.replace("/Game/Slide");
+    }
 
     useEffect(() => {
         if(!context.gameData) return;
@@ -37,22 +40,30 @@ export default function Presentation() {
     }, [context.gameData])
 
     useEffect(() => {
-        if(!context.gameData || !context.gameData.modelo.narrando || dadosGerais.nomeJogo === "carregando..." || !speaking) return;
+        if(!context.gameData || !context.gameData.modelo.narrando || dadosGerais.nomeJogo === "carregando..." || !speaking) 
+            return;
+
+        const speechOptions = {
+            ...SpeechOptions,
+            ...{
+                onDone: () => {
+                    if(showNext)
+                        setShowNext(() => false);
+                }
+            }
+        }
 
         Speech.speak(`
             ${dadosGerais.nomeJogo}.\n
             Autor: ${dadosGerais.autor}.\n
             ${dadosGerais.comentarios}.\n
             Versão: ${dadosGerais.versao}.\n
-            \n\n\n
-        `, {
-            rate: 1.15
-        });
+            \n\n
+            Toque na direita para continuar...
+        `,  speechOptions)
 
-        setSpeaking(false);
+        setSpeaking(() => false);
     }, [dadosGerais])
-
-    if(!dadosGerais) return null;
 
     return (
         <LinearGradient 
@@ -65,7 +76,9 @@ export default function Presentation() {
                 <Text style={[styles.authorVersion, { paddingLeft: 20 }]}>Autor: { dadosGerais.autor }</Text>
             </View>
             <View style={styles.mid}>
-                <View />
+                <View> 
+                    <Button title="Baixar" onPress={download}/>
+                </View>
                 <View style={{ alignItems: "center", gap: 5 }}>
                     <Text style={styles.title}>{ dadosGerais.nomeJogo }</Text>
                     <Text style={styles.comments}>{ dadosGerais.comentarios }</Text>
@@ -76,7 +89,21 @@ export default function Presentation() {
                 <Square style={{ width: "60%", marginLeft: 10 }}/>
                 <Text style={[styles.authorVersion, { paddingRight: 20 }]}>Versão: { dadosGerais.versao }</Text>
             </View>
-            <StatusBar hidden={true} />
+
+            {
+                !showNext
+                ?   (
+                        <View style={styles.next}>
+                            <TouchableNativeFeedback onPress={goNextSlide}>
+                                <View
+                                    style={{ backgroundColor: "rgba(255, 255, 255, .05)", width: "100%", flex: 1, alignItems: "center", justifyContent: "center"  }}>
+                                    <Icon style={{ alignSelf: "center" }} name="arrow-right-circle" color={"#fff"} size={46} />
+                                </View>
+                            </TouchableNativeFeedback>
+                        </View> 
+                    ) 
+                : null
+            }
         </LinearGradient>
     );
 }
@@ -122,5 +149,14 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: "700",
         paddingBottom: 20,
+    },
+    next: { 
+        position: "absolute", 
+        right: 0, 
+        width: "20%", 
+        height: Dimensions.get("window").height,
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center"
     }
 });

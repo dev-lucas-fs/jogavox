@@ -2,6 +2,7 @@ import { router } from "expo-router";
 import { StyleSheet, Text, View, SafeAreaView, FlatList } from "react-native";
 import { useContext } from 'react'
 
+
 import Amount from "@/components/Amount";
 import Edit from "@/components/Edit";
 import GameImage from "@/components/GameImage";
@@ -14,7 +15,6 @@ import { CurrentGameContext } from "@/contexts/CurrentGameContext";
 
 
 export default function Library() {
-    
     const context = useContext(CurrentGameContext);
 
     function GoToPresentation() {

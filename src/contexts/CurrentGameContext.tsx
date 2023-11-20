@@ -27,7 +27,13 @@ export default function CurrentGameProvider({ children }) {
 
     function nextGameState() {
         setGameState((gameState) => {
-            gameState.slide++;
+            if(gameData.lugares[gameState.lugar].slides.length < gameState.slide) {
+                gameState.slide++;
+                return gameState;
+            }
+
+            gameState.lugar++;
+            gameState.slide = 1;
             return gameState;
         })
     }

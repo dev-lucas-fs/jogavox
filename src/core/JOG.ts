@@ -14,13 +14,13 @@ type ModeloType = {
     narrando: boolean
 }
 
-type SlideType = {
+export type SlideType = {
     titulo: string;
     midia?: string;
     textos?: string[]
 }
 
-type LugarType = {
+export type LugarType = {
     nome: string;
     fundo?: string;
     slides: Array<SlideType>  
