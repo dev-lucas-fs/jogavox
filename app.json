@@ -29,6 +29,17 @@
     "plugins": [
       "expo-router",
       "expo-screen-orientation"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.dosvox.jogavox"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "ef294325-25b0-404d-95de-fdb64ab86e2b"
+      }
+    }
   }
 }

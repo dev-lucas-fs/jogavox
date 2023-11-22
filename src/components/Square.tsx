@@ -2,7 +2,6 @@ import { StyleSheet, View } from "react-native";
 
 export default function Square(props: React.ComponentProps<typeof View>) {
 
-
     return (
         <View style={[styles.square, props.style]}>
             <View style={[styles.squareHorizontal]} />
@@ -14,7 +13,6 @@ export default function Square(props: React.ComponentProps<typeof View>) {
         </View>
     )
 }
-
 
 const styles = StyleSheet.create({
     square: {

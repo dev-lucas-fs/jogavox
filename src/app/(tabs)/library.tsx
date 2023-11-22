@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import { StyleSheet, Text, View, SafeAreaView, FlatList } from "react-native";
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 
 
 import Amount from "@/components/Amount";
@@ -8,9 +8,7 @@ import Edit from "@/components/Edit";
 import GameImage from "@/components/GameImage";
 import TabLayout from "@/layouts/TabLayout";
 import { CurrentGameContext } from "@/contexts/CurrentGameContext";
-
-
-
+import { download } from "@/core/GameDownloader";
 
 
 
@@ -21,6 +19,10 @@ export default function Library() {
         context.changeId(1);
         router.push("/Game/Presentation");
     }
+
+    useEffect(() => {
+        download()
+    }, [])
 
     return (
         <TabLayout title="Biblioteca">

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, Button } from "react-native";
+import { View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, Button, Image } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { useContext, useState, useEffect } from 'react'
 import * as Speech from 'expo-speech';
@@ -11,6 +11,7 @@ import { DadosGeraisType } from "@/core/JOG";
 import { CurrentGameContext } from "@/contexts/CurrentGameContext";
 import SpeechOptions from "@/config/SpeechConfig";
 import { download } from "@/core/GameDownloader";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 const defaultDadosGerais = {
@@ -26,7 +27,7 @@ export default function Presentation() {
     const [dadosGerais, setDadosGerais] = useState<DadosGeraisType>(defaultDadosGerais);
     const [speaking, setSpeaking] = useState<boolean>(true)
     const [showNext, setShowNext] = useState<boolean>(true)
-
+    const [img, setImg] = useState<string>("")
     
     async function goNextSlide() {
         //@ts-ignore
@@ -77,10 +78,11 @@ export default function Presentation() {
             </View>
             <View style={styles.mid}>
                 <View> 
-                    <Button title="Baixar" onPress={download}/>
+                    <Button title="Baixar" onPress={() => {}}/>
                 </View>
                 <View style={{ alignItems: "center", gap: 5 }}>
                     <Text style={styles.title}>{ dadosGerais.nomeJogo }</Text>
+                    <Image style={{ width: 150, aspectRatio: 1 }} source={{ uri: "file:///data/user/0/com.dosvox.jogavox/files/games/1/2015_3_meio_ambiente/1.jpg" }} />
                     <Text style={styles.comments}>{ dadosGerais.comentarios }</Text>
                 </View>
                 <Square style={{ width: "20%", marginBottom: "-12%", transform: "rotate(45deg)" }}/>
@@ -93,7 +95,7 @@ export default function Presentation() {
             {
                 !showNext
                 ?   (
-                        <View style={styles.next}>
+                        <View style={[styles.next, { height: !showNext ? Dimensions.get('screen').height : "100%"}]}>
                             <TouchableNativeFeedback onPress={goNextSlide}>
                                 <View
                                     style={{ backgroundColor: "rgba(255, 255, 255, .05)", width: "100%", flex: 1, alignItems: "center", justifyContent: "center"  }}>
