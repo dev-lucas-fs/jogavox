@@ -1,27 +1,27 @@
 import { JOGType, JogToJSON } from '@/core/JOG';
-import { createContext, useState } from 'react';
+import { clearInstalledGames, findAll } from '@/core/JOGInstall';
+import { createContext, useEffect, useState } from 'react';
 
 export const CurrentGameContext = createContext<{ 
-    id: number, 
     gameState: GameStateType, 
     nextGameState: () => void, 
-    changeId: (newId: number) => void,
-    gameData: JOGType
+    changeCurrentGame: (id: string) => void,
+    gameData: JOGType,
+    installedGames: JOGType[],
+    reloadInstalledGames: () => Promise<void>
 }>(null);
 
-type GameStateType = { lugar: number, slide: number }
+type GameStateType = { lugar: number, slide: number };
 
-const defaultGameState = { lugar: 1, slide: 1 };
+const defaultGameState = { lugar: 0, slide: 0 };
 
 export default function CurrentGameProvider({ children }) {
-    const [id, setID] = useState<number>(0);
+    const [installedGames, setInstalledGames] = useState<JOGType[]>([]);
     const [gameData, setGameData] = useState<JOGType>(null); 
     const [gameState, setGameState] = useState<GameStateType>(defaultGameState);
 
-    async function changeId(newId: number) {
-        setID(newId);
-        const JOGContent = await JogToJSON();
-        setGameData(() => JOGContent)
+    function changeCurrentGame(id: string) {
+        setGameData(() => installedGames.find((value) => value.id === id))
         resetGameState();
     }
 
@@ -33,7 +33,7 @@ export default function CurrentGameProvider({ children }) {
             }
 
             gameState.lugar++;
-            gameState.slide = 1;
+            gameState.slide = 0;
             return gameState;
         })
     }
@@ -42,8 +42,24 @@ export default function CurrentGameProvider({ children }) {
         setGameState(() => defaultGameState)
     }
 
+    async function loadInstalledGames() {
+        // APENAS PARA TESTE
+        //await clearInstalledGames();
+        const installedGames = await findAll();
+        setInstalledGames(() => installedGames);
+    }
+
+    async function reloadInstalledGames() {
+        const installedGames = await findAll();
+        setInstalledGames(() => installedGames);
+    };
+
+    useEffect(() => {  
+        loadInstalledGames();
+    }, []);
+
     return (
-        <CurrentGameContext.Provider value={{ id, gameState, nextGameState, changeId, gameData }}>
+        <CurrentGameContext.Provider value={{ gameState, nextGameState, changeCurrentGame, gameData, installedGames, reloadInstalledGames }}>
             { children }
         </CurrentGameContext.Provider>
     );

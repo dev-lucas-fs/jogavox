@@ -27,15 +27,16 @@ export type LugarType = {
 }
 
 export type JOGType = {
-    id?: number;
+    id: string;
+    image: string;
+    url?: string;
     dadosGerais: DadosGeraisType;
     modelo: ModeloType;
     lugares: Array<LugarType>;
 }
 
-async function JogToJSON(content?: string) {
-    const [{ localUri }] = await Asset.loadAsync(require("assets/test.jog"));
-    const jogAsString = await readAsStringAsync(localUri)
+async function JogToJSON(jogPath: string) {
+    const jogAsString = await readAsStringAsync(jogPath);
     const iniJSON = ini.decode(jogAsString);
 
     let dadosGerais = createDadosGeraisObject(iniJSON);
@@ -44,7 +45,6 @@ async function JogToJSON(content?: string) {
 
     
     return {
-        id: 1,
         dadosGerais,
         modelo,
         lugares

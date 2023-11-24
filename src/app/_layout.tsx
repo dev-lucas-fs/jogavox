@@ -13,8 +13,10 @@ export default function RootLayout() {
    
     
     const [fontsLoaded, fontError] = useFonts({
-        'Barlow': require('$/fonts/Barlow-Regular.ttf'),
-        'Barlow_Black': require('$/fonts/Barlow-Black.ttf')
+        'Montserrat': require('$/fonts/Montserrat-Regular.ttf'),
+        'Montserrat_Black': require('$/fonts/Montserrat-Black.ttf'),
+        'Montserrat_Medium': require('$/fonts/Montserrat-Medium.ttf'),
+        'Montserrat_Bold': require('$/fonts/Montserrat-Bold.ttf'),
     });
 
     const onLayoutRootView = useCallback(async () => {
