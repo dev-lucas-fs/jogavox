@@ -10,10 +10,11 @@ import { router } from "expo-router";
 export default function InstalledList() {
     const context = useContext(CurrentGameContext);
     const coverWidth = (Dimensions.get("screen").width - 40) / 2 - 15 / 2;
-
+    console.log(context.installedGames)
     function startGame(id: string) {
         context.changeCurrentGame(id);
         router.push("/Game/Presentation");
+        
     }
 
     return (
@@ -22,7 +23,11 @@ export default function InstalledList() {
                 nestedScrollEnabled
                 data={context.installedGames} 
                 renderItem={({ item }) => (
-                    <Cover onPress={() => startGame(item.id)} width={coverWidth} title={item.dadosGerais.nomeJogo } uri={item.image} />
+                    <Cover 
+                        onPress={() => startGame(item.id)} 
+                        width={coverWidth} 
+                        title={item.dadosGerais.nomeJogo } 
+                        uri={item.image} />
                 )} 
                 contentContainerStyle={{ gap: 15, paddingBottom: 20, paddingTop: 10 }}
                 numColumns={2}

@@ -7,10 +7,20 @@ import { ActivityIndicator, FlatList, Image, Pressable, StyleSheet, Text, View }
 
 
 
-
+const initialCollectionValue = (
+    collection
+)
 
 export default function StoreList() {
-    const [data] = useState<CollectionType[]>(collection);
+    const context = useContext(CurrentGameContext);
+    console.log(context.installedGames);
+    const [data] = useState<CollectionType[]>(
+        collection.sort((a, b) => (
+            !context.installedGames
+            ? -1 
+            : context.installedGames.find((k) => a.id === k.id) ? 1 : -1
+        ))
+    );
 
     return (
         <View style={{ flex: 1 }}>
@@ -27,8 +37,10 @@ export default function StoreList() {
 
 
 const Item = ({ data } : { data : CollectionType }) => {
-    const [installState, setInstallState] = useState<"installing" | "Instalar" | "Instalado">("Instalar");
     const context = useContext(CurrentGameContext);
+    const [installState, setInstallState] = useState<"installing" | "Instalar" | "Instalado">(
+        context.installedGames.find(({ id }) => id === data.id) ? "Instalado" : "Instalar"
+    );
 
     function handleOnPress() {
         if(installState === "Instalar")
@@ -38,7 +50,7 @@ const Item = ({ data } : { data : CollectionType }) => {
     async function downloadGame() {
         try {
             await download(data.id);
-            await context.reloadInstalledGames();
+            await context.loadInstalledGames();
             setInstallState("Instalado");
         } catch (error) {
             console.log(error);

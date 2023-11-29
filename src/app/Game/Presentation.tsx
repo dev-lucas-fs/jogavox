@@ -2,11 +2,11 @@ import { View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, Button, Im
 import { useContext, useState, useEffect } from 'react'
 import * as Speech from 'expo-speech';
 import { router } from "expo-router";
-import Icon from '@expo/vector-icons/Feather';
 
 import { DadosGeraisType } from "@/core/JOG";
 import { CurrentGameContext } from "@/contexts/CurrentGameContext";
 import SpeechOptions from "@/config/SpeechConfig";
+import Next from "@/components/Next";
 
 
 const defaultDadosGerais = {
@@ -20,10 +20,10 @@ const defaultDadosGerais = {
 export default function Presentation() {
     const context = useContext(CurrentGameContext);
     const [dadosGerais, setDadosGerais] = useState<DadosGeraisType>(context.gameData.dadosGerais);
-    const [speaking, setSpeaking] = useState<boolean>(true);
     const [showNext, setShowNext] = useState<boolean>(true);
     
     async function goNextSlide() {
+        context.resetGameState();
         //@ts-ignore
         router.replace("/Game/Slide");
     }
@@ -35,8 +35,7 @@ export default function Presentation() {
             ...SpeechOptions,
             ...{
                 onDone: () => {
-                    if(showNext)
-                        setShowNext(() => false);
+                    setShowNext(() => true);
                 }
             }
         }
@@ -49,8 +48,6 @@ export default function Presentation() {
             \n\n
             Toque na direita para continuar...
         `,  speechOptions)
-
-        setSpeaking(() => false);
     }, [])
 
     return (
@@ -69,22 +66,8 @@ export default function Presentation() {
                 <View style={styles.right}>
                     <Text style={[styles.authorVersion, { paddingRight: 20 }]}>Versão: { dadosGerais.versao }</Text>
                 </View>
-
-                {
-                    !showNext
-                    ?   (
-                            <View style={[styles.next, { height: !showNext ? Dimensions.get('screen').height : "100%"}]}>
-                                <TouchableNativeFeedback onPress={goNextSlide}>
-                                    <View
-                                        style={{ backgroundColor: "rgba(255, 255, 255, .05)", width: "100%", flex: 1, alignItems: "center", justifyContent: "center"  }}>
-                                        <Icon style={{ alignSelf: "center" }} name="arrow-right-circle" color={"#fff"} size={46} />
-                                    </View>
-                                </TouchableNativeFeedback>
-                            </View> 
-                        ) 
-                    : null
-                }
             </View>
+            <Next showNext={showNext} onPress={goNextSlide} />                
         </ImageBackground>
     );
 }
@@ -131,14 +114,5 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: "700",
         paddingBottom: 20,
-    },
-    next: { 
-        position: "absolute", 
-        right: 0, 
-        width: "20%", 
-        height: Dimensions.get("window").height,
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
     }
 });

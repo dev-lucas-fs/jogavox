@@ -5,10 +5,11 @@ import { createContext, useEffect, useState } from 'react';
 export const CurrentGameContext = createContext<{ 
     gameState: GameStateType, 
     nextGameState: () => void, 
+    resetGameState: () => void,
     changeCurrentGame: (id: string) => void,
     gameData: JOGType,
     installedGames: JOGType[],
-    reloadInstalledGames: () => Promise<void>
+    loadInstalledGames: () => Promise<void>
 }>(null);
 
 type GameStateType = { lugar: number, slide: number };
@@ -27,15 +28,18 @@ export default function CurrentGameProvider({ children }) {
 
     function nextGameState() {
         setGameState((gameState) => {
-            if(gameData.lugares[gameState.lugar].slides.length < gameState.slide) {
+            if((gameData.lugares[gameState.lugar].slides.length - 1) > gameState.slide) {
                 gameState.slide++;
-                return gameState;
+            } else if((gameData.lugares.length - 1) > gameState.lugar) {
+                gameState.lugar++;
+                gameState.slide = 0;
             }
 
-            gameState.lugar++;
-            gameState.slide = 0;
-            return gameState;
-        })
+            return {
+                slide: gameState.slide,
+                lugar: gameState.lugar
+            };
+        });
     }
 
     function resetGameState() {
@@ -46,20 +50,17 @@ export default function CurrentGameProvider({ children }) {
         // APENAS PARA TESTE
         //await clearInstalledGames();
         const installedGames = await findAll();
-        setInstalledGames(() => installedGames);
+        if(installedGames !== null)
+            setInstalledGames(() => installedGames);
     }
 
-    async function reloadInstalledGames() {
-        const installedGames = await findAll();
-        setInstalledGames(() => installedGames);
-    };
-
     useEffect(() => {  
+        //clearInstalledGames();
         loadInstalledGames();
     }, []);
 
     return (
-        <CurrentGameContext.Provider value={{ gameState, nextGameState, changeCurrentGame, gameData, installedGames, reloadInstalledGames }}>
+        <CurrentGameContext.Provider value={{ resetGameState, gameState, nextGameState, changeCurrentGame, gameData, installedGames, loadInstalledGames }}>
             { children }
         </CurrentGameContext.Provider>
     );

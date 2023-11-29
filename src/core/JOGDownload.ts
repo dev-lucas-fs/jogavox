@@ -4,7 +4,6 @@ import { findById } from "./JOGCollection";
 import { install } from "./JOGInstall";
 
 export async function download(gameId: string) {
-    console.log("COMEÇOU O DOWNLOAD");
     const gameFromCollection = findById(gameId);
     if(gameFromCollection === null) return null;
     
@@ -35,7 +34,6 @@ export async function download(gameId: string) {
 
 async function createFolder(name: string, path = FileSystem.documentDirectory) {
     const dirContents = await FileSystem.readDirectoryAsync(path);
-    console.log(dirContents);
     const isFolder = dirContents.filter((content) => content == name).length > 0;
 
     if(isFolder) return;
