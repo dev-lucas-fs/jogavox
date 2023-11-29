@@ -17,7 +17,7 @@ type ModeloType = {
 export type SlideType = {
     titulo: string;
     midia?: string;
-    textos?: string[]
+    textos?: string[];
 }
 
 export type LugarType = {

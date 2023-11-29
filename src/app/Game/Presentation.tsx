@@ -8,19 +8,10 @@ import { CurrentGameContext } from "@/contexts/CurrentGameContext";
 import SpeechOptions from "@/config/SpeechConfig";
 import Next from "@/components/Next";
 
-
-const defaultDadosGerais = {
-    autor: "",
-    nomeJogo: "carregando...",
-    versao: "",
-    comentarios: [""]
-}
-
-
 export default function Presentation() {
     const context = useContext(CurrentGameContext);
     const [dadosGerais, setDadosGerais] = useState<DadosGeraisType>(context.gameData.dadosGerais);
-    const [showNext, setShowNext] = useState<boolean>(true);
+    const [showNext, setShowNext] = useState<boolean>(false);
     
     async function goNextSlide() {
         context.resetGameState();

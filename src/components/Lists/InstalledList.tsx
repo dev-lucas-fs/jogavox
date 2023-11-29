@@ -10,7 +10,7 @@ import { router } from "expo-router";
 export default function InstalledList() {
     const context = useContext(CurrentGameContext);
     const coverWidth = (Dimensions.get("screen").width - 40) / 2 - 15 / 2;
-    console.log(context.installedGames)
+    
     function startGame(id: string) {
         context.changeCurrentGame(id);
         router.push("/Game/Presentation");

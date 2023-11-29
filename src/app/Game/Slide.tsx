@@ -4,33 +4,39 @@ import React from 'react';
 
 import { CurrentGameContext } from "@/contexts/CurrentGameContext";
 import { Audio } from "expo-av";
-import Next from "@/components/Next";
 import { router } from "expo-router";
+import * as Speech from 'expo-speech';
+
+import SpeechOptions from "@/config/SpeechConfig";
+import Next from "@/components/Next";
 
 
 export default function Slide() {
     const context = useContext(CurrentGameContext);
     const [showNext, setShowNext] = useState<boolean>(true);
     const lugar = context.gameData.lugares[context.gameState.lugar];
-    async function load() {
-        const slide = context.gameData.lugares[context.gameState.lugar].slides[context.gameState.slide];
-        if(slide === undefined) return;
+    const slide = lugar.slides[context.gameState.slide];
 
-        const playsound = await handleSound(slide.midia);
+    async function load() {
+
+        if(slide.midia) {
+            const sound = await handleSound(slide.midia);
+            await sound.playAsync();
+        }
         
+        if(slide.textos) {
+            Speech.speak(
+                slide.textos.reduce((prev, curr) => prev + "\n" + curr, ""),
+                SpeechOptions
+            )
+        }
     }
 
-    useEffect(() => { load() }, [context.gameState])
     useEffect(() => { load() }, [])
 
-    if(lugar === undefined) {
-        console.log(context.gameState.lugar)
-    }
 
- 
-    
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, position: "relative" }}>
             <Background fundo={lugar.fundo}>
                 {
                     
@@ -45,8 +51,9 @@ export default function Slide() {
 async function handleSound(uri: string) {
     if(!uri) return;
 
-    const { sound } = await Audio.Sound.createAsync({ uri });
-    await sound.playAsync()
+    const sound = new Audio.Sound();
+    await sound.loadAsync({ uri });
+    return sound
 }
 
 

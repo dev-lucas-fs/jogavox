@@ -34,16 +34,19 @@ export async function install({ id, gameFolder }: InstallPropsType) {
     for(let i = 0; i < JOGObj.lugares.length; i++) {
         const fundo = JOGObj.lugares[i].fundo;
         if(fundo) {
-            const { path } = assets.find(({ name }) => name == fundo);
-            JOGObj.lugares[i].fundo = path;
+            const asset = assets.find(({ name }) => name == fundo);
+            
+            if(asset)
+                JOGObj.lugares[i].fundo = asset.path;
         }
 
         const slides = JOGObj.lugares[i].slides;
         for(let j = 0; j < slides.length; j++) {
             const midia = slides[j].midia;
             if(midia) {
-                const { path } = assets.find(({ name }) => name == midia);
-                JOGObj.lugares[i].slides[j].midia = path;
+                const asset = assets.find(({ name }) => name == midia);
+                if(asset)
+                    JOGObj.lugares[i].slides[j].midia = asset.path;
             }
         }
     }

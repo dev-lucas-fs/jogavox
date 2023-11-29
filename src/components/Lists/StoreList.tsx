@@ -6,11 +6,6 @@ import { useContext, useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 
-
-const initialCollectionValue = (
-    collection
-)
-
 export default function StoreList() {
     const context = useContext(CurrentGameContext);
     console.log(context.installedGames);

@@ -16,15 +16,15 @@ export async function download(gameId: string) {
     await createFolder("games");
     
     await removeZipFiles();
+   
     await FileSystem.downloadAsync(url, `${base}/${fileName}`);  
-
     await createFolder(id, base);
     await Zip.unzip(`${base}/${fileName}`, gameFolder);
-    
-    const [folder] = await FileSystem.readDirectoryAsync(gameFolder);
+   
 
+    const [folder] = await FileSystem.readDirectoryAsync(gameFolder);
     const contentFolderPath = `${gameFolder}/${folder}`;
-    
+
     await install ({
         gameFolder: contentFolderPath,
         id
