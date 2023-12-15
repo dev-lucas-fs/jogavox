@@ -1,5 +1,5 @@
 import Colors from "@/constants/Colors";
-import { CurrentGameContext } from "@/contexts/CurrentGameContext";
+import { CurrentGameContext } from "@/Contexts/CurrentGameContext";
 import collection, { CollectionType } from "@/core/JOGCollection";
 import { download } from "@/core/JOGDownload";
 import { useContext, useEffect, useState } from "react";

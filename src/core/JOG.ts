@@ -1,49 +1,18 @@
 import ini from "ini";
 import { readAsStringAsync } from 'expo-file-system';
-import { Asset } from "expo-asset";
+import { DadosGeraisType, JOGType, LugarType, ModeloType, SlideType } from "./JOGTypes";
 
 
-export type DadosGeraisType = {
-    nomeJogo: string;
-    autor: string;
-    versao: string;
-    comentarios?: string[];
-}
 
-type ModeloType = {
-    narrando: boolean
-}
 
-export type SlideType = {
-    titulo: string;
-    midia?: string;
-    textos?: string[];
-}
-
-export type LugarType = {
-    nome: string;
-    fundo?: string;
-    slides: Array<SlideType>  
-}
-
-export type JOGType = {
-    id: string;
-    image: string;
-    url?: string;
-    dadosGerais: DadosGeraisType;
-    modelo: ModeloType;
-    lugares: Array<LugarType>;
-}
-
-async function JogToJSON(jogPath: string) {
-    const jogAsString = await readAsStringAsync(jogPath);
+export async function JogToJSON(jogPath: string) {
+    const jogAsString = await readAsStringAsync(jogPath)
     const iniJSON = ini.decode(jogAsString);
 
     let dadosGerais = createDadosGeraisObject(iniJSON);
     let modelo = createModeloObject(iniJSON);
     let lugares = createLugaresObject(iniJSON);
 
-    
     return {
         dadosGerais,
         modelo,
@@ -97,12 +66,8 @@ function createLugaresObject(obj: any) {
         if(obj[key] === undefined) break;
 
         currentLugar = obj[key];
-
-        const lugar = {
-            nome: currentLugar["NOME"],
-        }
-        if(currentLugar["FUNDO"])
-            lugar["fundo"] = currentLugar["FUNDO"];
+    
+        const lugar = setLugarProperties(currentLugar);
 
         lugar["slides"] = createSlidesObject(obj, i);
 
@@ -112,6 +77,29 @@ function createLugaresObject(obj: any) {
     return lugares as LugarType[];
 }
 
+function setLugarProperties(lugar: any) {
+    const lugarMap = {
+        "FUNDO": "fundo",
+        "LUGAR OK": "lugarOK",
+        "LUGAR ERRO": "lugarErro",
+        "PONTUAÇÃO":"pontos",
+        "RESPOSTA ESPERADA":"respostaEsperada",
+        "NOME": "nome"
+    }
+
+    const lugarObj = {} as LugarType;
+
+    for(let prop of Object.keys(lugarMap)) {
+        const key = lugarMap[prop];
+        if(key) {
+            lugarObj[key] = lugar[prop];
+        }
+    }
+
+    console.log(lugarObj)
+
+    return lugarObj;
+}
 
 function createSlidesObject(obj: any, lugarIndex: number) {
     let currentSlide = {}
@@ -137,12 +125,4 @@ function createSlidesObject(obj: any, lugarIndex: number) {
     }
 
     return slides as SlideType[];
-}
-
-
-
-
-
-export {
-    JogToJSON
 }

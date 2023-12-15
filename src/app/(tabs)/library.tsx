@@ -4,13 +4,14 @@ import { useContext, useEffect } from 'react'
 
 
 import TabLayout from "@/layouts/TabLayout";
-import { CurrentGameContext } from "@/contexts/CurrentGameContext";
+import { CurrentGameContext } from "@/Contexts/CurrentGameContext";
 import Colors from "@/constants/Colors";
-import InstalledList from "@/components/Lists/InstalledList";
+import InstalledList from "@/Components/Lists/InstalledList";
 
 
 
 export default function Library() {
+    
 
     return (
         <TabLayout>        

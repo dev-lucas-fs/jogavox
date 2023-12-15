@@ -1,20 +1,20 @@
-import { Dimensions, FlatList, Pressable, Text, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
 import Cover from "../Cover";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Colors from "@/constants/Colors";
-import { CurrentGameContext } from "@/contexts/CurrentGameContext";
+import { CurrentGameContext } from "@/Contexts/CurrentGameContext";
 import { router } from "expo-router";
+import { DimensionContext } from "@/Contexts/DimensionContext";
 
 
 
 export default function InstalledList() {
     const context = useContext(CurrentGameContext);
-    const coverWidth = (Dimensions.get("screen").width - 40) / 2 - 15 / 2;
-    
+    const { dimensions } = useContext(DimensionContext);
+  
     function startGame(id: string) {
         context.changeCurrentGame(id);
         router.push("/Game/Presentation");
-        
     }
 
     return (
@@ -25,8 +25,8 @@ export default function InstalledList() {
                 renderItem={({ item }) => (
                     <Cover 
                         onPress={() => startGame(item.id)} 
-                        width={coverWidth} 
-                        title={item.dadosGerais.nomeJogo } 
+                        width={(dimensions.width - 50) / 2} 
+                        title={item.dadosGerais.nomeJogo} 
                         uri={item.image} />
                 )} 
                 contentContainerStyle={{ gap: 15, paddingBottom: 20, paddingTop: 10 }}

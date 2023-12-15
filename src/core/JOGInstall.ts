@@ -1,8 +1,9 @@
 import Storage from "@/core/storage";
 import * as FileSystem from "expo-file-system";
 
-import { JOGType, JogToJSON } from "./JOG";
+import { JogToJSON } from "./JOG";
 import { findById } from "./JOGCollection";
+import { JOGType } from "./JOGTypes";
 
 export type InstallPropsType = {
     id: string;
@@ -21,6 +22,7 @@ export async function install({ id, gameFolder }: InstallPropsType) {
 
     for(let file of contentFolder) {
         const filePath = `${gameFolder}/${file}`;
+        
         if(file.split(".jog").length > 1) {
             JOGObj = await JogToJSON(`${filePath}`);
             continue;

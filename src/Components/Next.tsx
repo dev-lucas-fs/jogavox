@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { Dimensions, TouchableNativeFeedback, View } from "react-native";
 import Icon from '@expo/vector-icons/Feather';
-import { CurrentGameContext } from "@/contexts/CurrentGameContext";
+import { CurrentGameContext } from "@/Contexts/CurrentGameContext";
 import { useContext } from "react";
 import { router } from "expo-router";
 

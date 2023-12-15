@@ -1,5 +1,6 @@
-import { JOGType, JogToJSON } from '@/core/JOG';
+import { JogToJSON } from '@/core/JOG';
 import { clearInstalledGames, findAll } from '@/core/JOGInstall';
+import { JOGType } from '@/core/JOGTypes';
 import { createContext, useEffect, useState } from 'react';
 
 export const CurrentGameContext = createContext<{ 
@@ -10,6 +11,7 @@ export const CurrentGameContext = createContext<{
     gameData: JOGType,
     installedGames: JOGType[],
     loadInstalledGames: () => Promise<void>
+    clear: () => Promise<void>
 }>(null);
 
 type GameStateType = { lugar: number, slide: number };
@@ -48,20 +50,25 @@ export default function CurrentGameProvider({ children }) {
 
     async function loadInstalledGames() {
         // APENAS PARA TESTE
-        //await clearInstalledGames();
+        //await clear();
         const installedGames = await findAll();
         if(installedGames !== null)
             setInstalledGames(() => installedGames);
     }
 
+    async function clear() {
+        clearInstalledGames();
+        setInstalledGames(() => [])
+    }
+
     useEffect(() => {  
-        //clearInstalledGames();
+        //clear();
         loadInstalledGames();
-        //clearInstalledGames();
+        //clear();
     }, []);
 
     return (
-        <CurrentGameContext.Provider value={{ resetGameState, gameState, nextGameState, changeCurrentGame, gameData, installedGames, loadInstalledGames }}>
+        <CurrentGameContext.Provider value={{ clear, resetGameState, gameState, nextGameState, changeCurrentGame, gameData, installedGames, loadInstalledGames }}>
             { children }
         </CurrentGameContext.Provider>
     );

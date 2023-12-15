@@ -24,6 +24,7 @@ export default function Layout() {
               }}>
             <Tabs.Screen name="library" options={{ tabBarIcon: ({ size, color }) => <CustomIcon name='home' color={color} />  }}/>
             <Tabs.Screen name="store" options={{ tabBarIcon: ({ size, color }) => <CustomIcon name='shopping-bag' color={color} />  }}/>
+            <Tabs.Screen name="settings" options={{ tabBarIcon: ({ size, color }) => <CustomIcon name='settings' color={color} />  }}/>
         </Tabs>
     );
 }

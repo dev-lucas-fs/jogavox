@@ -2,8 +2,8 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import TabLayout from '@/layouts/TabLayout';
 import Colors from '@/constants/Colors';
-import StoreList from '@/components/Lists/StoreList';
-import RecommendedList from '@/components/Lists/RecommendList';
+import StoreList from '@/Components/Lists/StoreList';
+import RecommendedList from '@/Components/Lists/RecommendList';
 
 export default function Store() {
     return (

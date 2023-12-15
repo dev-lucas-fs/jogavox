@@ -7,7 +7,7 @@ export async function download(gameId: string) {
     const gameFromCollection = findById(gameId);
     if(gameFromCollection === null) return null;
     
-    const { url, name, id } = gameFromCollection;
+    const { url, id } = gameFromCollection;
 
     const base = FileSystem.documentDirectory + "games";
     const fileName = id + ".zip";

@@ -1,30 +1,30 @@
 import { View, Text, ImageBackground, TextComponent } from "react-native";
 import { useContext, useState, useEffect } from 'react'
 import React from 'react';
-
-import { CurrentGameContext } from "@/contexts/CurrentGameContext";
 import { Audio } from "expo-av";
-import { router } from "expo-router";
 import * as Speech from 'expo-speech';
 
+import { CurrentGameContext } from "@/Contexts/CurrentGameContext";
+import Answer from "@/Components/Slide/Answer";
 import SpeechOptions from "@/config/SpeechConfig";
-import Next from "@/components/Next";
-
+import { useNavigation } from 'expo-router';
 
 export default function Slide() {
     const context = useContext(CurrentGameContext);
-    const [showNext, setShowNext] = useState<boolean>(true);
+    const navigation = useNavigation();
+
     const lugar = context.gameData.lugares[context.gameState.lugar];
+    const modelo = context.gameData.modelo;
     const slide = lugar.slides[context.gameState.slide];
 
-    async function load() {
 
+    async function load() {
         if(slide.midia) {
             const sound = await handleSound(slide.midia);
             await sound.playAsync();
         }
         
-        if(slide.textos) {
+        if(slide.textos && modelo.narrando) {
             Speech.speak(
                 slide.textos.reduce((prev, curr) => prev + "\n" + curr, ""),
                 SpeechOptions
@@ -32,7 +32,16 @@ export default function Slide() {
         }
     }
 
-    useEffect(() => { load() }, [])
+    useEffect(() => { 
+        load() 
+    
+        navigation.addListener('beforeRemove', (e) => {
+            e.preventDefault();
+            Speech.stop();
+            navigation.dispatch(e.data.action);
+        });
+        
+    }, [])
 
 
     return (
@@ -42,8 +51,6 @@ export default function Slide() {
                     
                 }
             </Background>  
-
-           <Next showNext={showNext} />   
         </View>
     );
 }

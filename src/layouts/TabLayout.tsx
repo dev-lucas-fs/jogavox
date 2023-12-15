@@ -1,26 +1,36 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar"
-import { useEffect } from "react";
+import { useEffect, useContext, useState } from "react";
 import * as ScreenOrientation from "expo-screen-orientation"
 import * as NavigationBar from 'expo-navigation-bar';
 import Icon from '@expo/vector-icons/Ionicons';
 
 
 import Colors from "@/constants/Colors";
+import { DimensionContext } from "@/Contexts/DimensionContext";
 
 interface Props extends React.PropsWithChildren {
     isBack?: boolean;
 }
 
-async function forcePORTRAIT() {
-    await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
-    await NavigationBar.setVisibilityAsync("visible");
-}
-
 export default function TabLayout({ isBack, children } : Props) {
+    const { update } = useContext(DimensionContext)
+    const [show, setShow] = useState(false);
+
+    async function forcePORTRAIT() {
+        await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
+        await NavigationBar.setVisibilityAsync("visible");
+        
+        update();
+    }
+
     useEffect(() => {    
-        forcePORTRAIT();
+        forcePORTRAIT().then(() => {
+            setShow(true);
+        });
     }, [])
+
+    if(!show) return null;
 
     return (
         <View style={styles.container}>

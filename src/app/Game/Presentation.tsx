@@ -2,17 +2,20 @@ import { View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, Button, Im
 import { useContext, useState, useEffect } from 'react'
 import * as Speech from 'expo-speech';
 import { router } from "expo-router";
+import { useNavigation } from 'expo-router';
 
-import { DadosGeraisType } from "@/core/JOG";
-import { CurrentGameContext } from "@/contexts/CurrentGameContext";
+import { CurrentGameContext } from "@/Contexts/CurrentGameContext";
 import SpeechOptions from "@/config/SpeechConfig";
-import Next from "@/components/Next";
+import Next from "@/Components/Next";
+import { DadosGeraisType } from "@/core/JOGTypes";
 
 export default function Presentation() {
     const context = useContext(CurrentGameContext);
     const [dadosGerais, setDadosGerais] = useState<DadosGeraisType>(context.gameData.dadosGerais);
     const [showNext, setShowNext] = useState<boolean>(false);
-    
+    const navigation = useNavigation();
+
+
     async function goNextSlide() {
         context.resetGameState();
         //@ts-ignore
@@ -39,6 +42,13 @@ export default function Presentation() {
             \n\n
             Toque na direita para continuar...
         `,  speechOptions)
+
+
+        navigation.addListener('beforeRemove', (e) => {
+            e.preventDefault();
+            Speech.stop();
+            navigation.dispatch(e.data.action);
+        });
     }, [])
 
     return (
